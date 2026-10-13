@@ -8,8 +8,11 @@ from google import genai
 
 # تحميل متغيرات البيئة من ملف .env
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
-
+# محاولة قراءة المفتاح من إعدادات Streamlit Cloud أو ملف البيئة المحلي
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    api_key = os.getenv("GEMINI_API_KEY")
 # إعداد الصفحة وتفعيل تصميم الواجهة واتجاه النص
 st.set_page_config(
     page_title="Digital Forensics Dashboard", 
