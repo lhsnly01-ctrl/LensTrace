@@ -4,8 +4,7 @@ from PIL.ExifTags import TAGS, GPSTAGS
 import pandas as pd
 import os
 from dotenv import load_dotenv
-from google import genai
-
+import google.generativeai as genai
 # تحميل متغيرات البيئة من ملف .env
 load_dotenv()
 # محاولة قراءة المفتاح من إعدادات Streamlit Cloud أو ملف البيئة المحلي
