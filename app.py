@@ -12,8 +12,7 @@ try:
     api_key = st.secrets["GEMINI_API_KEY"]
 except Exception:
     api_key = os.getenv("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key)
-# إعداد الصفحة وتفعيل تصميم الواجهة واتجاه النص
+genai.configure(api_key=api_key)# إعداد الصفحة وتفعيل تصميم الواجهة واتجاه النص
 st.set_page_config(
     page_title="Digital Forensics Dashboard", 
     layout="wide",
